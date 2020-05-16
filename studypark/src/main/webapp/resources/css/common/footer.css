@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/*studypark footer style sheet*/
+
+.footer{width:100%; margin:0 auto;padding-bottom:20px;
+background:rgb(224, 224, 224);position: absolute; padding: 15px 0; text-align: center;}
+html{height:100%}
+body{min-height:100%;  position: relative; margin: 0;}
+
+
