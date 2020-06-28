@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userMapper">
+  
+<!-- 회원가입 -->  
+<insert id="userJoinSuccess" parameterType="Hashmap">
+INSERT INTO TBL_USER(
+USER_SEQ, 
+NAME, 
+NICKNAME, 
+EMAIL, 
+PHONE_NUMBER, 
+PASSWORD, 
+ADDRESS1, 
+ADDRESS2,
+ZIPCODE,
+BRANCH_ADDRESS,
+PLUS_ADDRESS_INFO
+)VALUES(
+USER_SEQ.NEXTVAL, 
+#{name}, 
+#{nickName}, 
+#{eMail}, 
+#{phoneNumber}, 
+#{password}, 
+#{address1}, 
+#{address2},
+#{zipcode},
+#{branchAddress},
+#{plusAddressInfo}
+)
+</insert>
+  
+<select id="userLoginEmailChk" parameterType="user" resultType="User">
+SELECT EMAIL, PASSWORD, NAME
+  FROM TBL_USER 
+ WHERE EMAIL = #{eMail}
+</select>  
+<select id="userLoginPhoneChk" parameterType="user" resultType="User">
+SELECT PHONE_NUMBER, PASSWORD, NAME
+  FROM TBL_USER 
+ WHERE PHONE_NUMBER= #{phoneNumber}
+</select>  
+  
+  
+  
+</mapper>

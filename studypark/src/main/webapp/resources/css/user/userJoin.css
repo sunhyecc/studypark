@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.main{ width:50%; margin:0 auto;}
+.whiteBox{padding:70px;}
+.joinTitle{font-size:30px; text-align: center;}
+.agreeFont{font-size:16px; color:red; margin:50px 0px 10px 295px;}
+.agreeBox ul li{ list-style: none; margin:10px 0px;}
+.agreeBox ul li p {display: inline-block;}
+.agreeBox input[type="checkBox"]{margin-right:7px; zoom: 1.5;}
+.agreeBox { width: 330px; padding: 20px; border: 2px solid rgb(158, 158, 158);border-radius: 5px;margin-left: 295px;}
+.agreeLine{width:310px; background:rgb(158, 158, 158); padding:1px; margin:10px 0px 10px 0px;}
+.pil{color:#1CD8A9;}
+.snsJoinBox ul li{list-style: none; display: inline-block;}
+.snsJoinBox{text-align:center;}
+.snsJoinFont{color:#333333; text-align:center; margin-top:20px; }
+.line{width:500px; background:rgb(158, 158, 158); padding:1px; margin:20px 0px 50px 235px;}
+.infoBox {margin-left: 235px;}
+.infoBox .nameBox input[type="text"]{padding: 5px 0px 5px 0px;font-size:18px;width:20%; margin:7px 0px 20px 0px;}
+.infoBox .phoneBox input[type="text"]{padding: 5px 0px 5px 0px;font-size:18px;width:20%; margin:7px 0px 20px 0px;}
+.infoBox .mailBox input[type="text"]{padding: 5px 0px 5px 0px;font-size:18px;width:20%; margin:7px 0px 20px 0px;}
+.infoBox .passwordBox input[type="text"]{padding: 5px 0px 5px 0px;font-size:18px;width:20%; margin:7px 0px 20px 0px;}
+.infoBox .nickBox input[type="text"]{padding: 5px 0px 5px 0px;font-size:18px;width:20%; margin:7px 0px 20px 0px;}
+.infoBox button{padding: 10px 25px;background: #1CD8A9; border: 1px solid #1CD8A9; border-radius: 5px;}
+.infoBox .passwordBox p {margin-bottom:5px; display:inline-block;}
+.infoBox .passwordBox input[type="text"] {display: block;font-size:18px;width:50%;}
+.infoBox .nickBox p {margin-bottom:5px; display:inline-block;}
+.infoBox .nickBox input[type="text"] {display: block;width:50%;}
+.mailList{font-size:18px;padding: 5px 0px 5px 0px;width:20%;}
+.littleFont{font-size:13px;margin-left:10px; color:#4a4747}
+.joinButton{text-align:center;}
+.joinButton input[type="submit"]{font-size:16px;color:white;padding: 10px 50px;background: #1CD8A9;border: 1px solid #1CD8A9; border-radius: 5px;}
+.addressBox li{list-style: none;}
+.addressBt{padding: 10px 25px;background: #1CD8A9; border: 1px solid #1CD8A9; border-radius: 5px;}
+.zipcode{margin-top:10px;padding: 5px 0px 5px 0px; font-size:18px;}
+.jibun{margin:7px 0px 7px 0px;padding: 5px 0px 5px 0px; font-size:18px; width:35%;}
+.doro{margin:7px 0px 7px 0px;padding: 5px 0px 5px 0px; font-size:18px; width:35%;}
+.detailAdd{margin-bottom:70px;padding: 5px 0px 5px 0px; font-size:18px; width:35%;}
+.plusInfo{margin-bottom:70px;padding: 5px 0px 5px 0px; font-size:18px; width:35%;}

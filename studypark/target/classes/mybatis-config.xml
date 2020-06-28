@@ -3,16 +3,13 @@
 "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-<!-- 	<typeAliases>		
-		<typeAlias type="bclass.finalproject.lovemein.users.model.vo.Users" alias="Users" />
-
-  </typeAliases>
-
+	<typeAliases>		
+		<typeAlias type="sunhye.choi.studypark.user.model.vo.User" alias="User" />
+ 	</typeAliases>
+	
 	<mappers>
-		<mapper resource="mappers/users-mapper.xml" />
-
-     	
-	</mappers>
-	 -->
+		<mapper resource="mappers/UserMapper.xml" />
+	</mappers> 
+	
 	
 </configuration>

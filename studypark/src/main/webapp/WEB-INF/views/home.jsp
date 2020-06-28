@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <html>
 <head>
 	<title>스터디파크에 오신걸 환영합니다.</title>
@@ -53,7 +53,11 @@ $(document).ready(function(){
 
 });
 </script>
+
+
 <c:import url="common/header.jsp"/>
+
+
 <body>
 <div id="main">
 	

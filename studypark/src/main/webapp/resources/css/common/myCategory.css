@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+#myCategoryMain{ width:100%; margin:0 auto;}
+.whiteBox{padding:5px;}
+.hrLine{  
+	margin-bottom : 5px;
+	padding: 1px;
+    width: 100%;
+    background: #bbbaba;
+}
+.myCategoryUl{ margin: 0 auto; text-align:center; list-style-type: none;}
+.myCategoryUl li {
+	list-style: none;
+ 	vertical-align: middle; 
+ 	text-align: center; 
+ 	display:inline-block;
+}
+.liA{
+	margin:0px 5px 2px 2px;
+	font-size:18px;
+}
+
+.profileUl{ margin: 0 auto; text-align:center; }
+
+.profileUl li {
+	list-style: none;
+ 	vertical-align: middle; 
+ 	text-align: center; 
+ 	display:inline-block;
+}
+
+.profileLiA{
+	margin:5px 30px 5px 0px;
+	font-size:14px;
+}

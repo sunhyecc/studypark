@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.main{ width:60%; margin:0 auto;}
+.whiteBox{padding:5px;}
+.myProfileBox{
+	width: 30%;
+}
+.myPhoto{
+	background: blue;
+    padding: 100px;
+    height: 100px;
+    margin-top: 100px;
+}
+
+.nickNameBox{
+	margin-top:20px;
+}
+
+.myPageNickName{
+	
+	font-size:25px;
+	margin-left:30px;
+}
+
+.followBox{
+	margin-top:15px;
+	margin-left:30px;
+}
+
+.followBox p {
+	    display: inline-block;
+}
+.menuBox{
+		margin-top:15px;
+		text-align:center;
+
+}
+.menuBox p{
+	    display: inline-block;
+
+}
+.likeListBox{
+	margin:30px 0px 30px 0px;
+}
+.likeList{
+	border:1px solid gray;
+	height:300px;
+}

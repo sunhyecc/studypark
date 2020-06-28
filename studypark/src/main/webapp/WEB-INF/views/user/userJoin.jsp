@@ -1,84 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("utf-8"); %>
+
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>StudyPark 회원가입을 해주세요^-^</title>
+<link href="resources/css/user/userJoin.css" rel="stylesheet" type="text/css">
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script>
-<style type="text/css">
-.main{ width:50%; margin:0 auto;}
-.whiteBox{padding:70px;}
-.joinTitle{font-size:30px; text-align: center;}
-.agreeFont{font-size:16px; color:red; margin:50px 0px 10px 295px;}
-.agreeBox ul li{ list-style: none; margin:10px 0px;}
-.agreeBox ul li p {display: inline-block;}
-.agreeBox input[type="checkBox"]{margin-right:7px; zoom: 1.5;}
-.agreeBox { width: 330px; padding: 20px; border: 2px solid rgb(158, 158, 158);border-radius: 5px;margin-left: 295px;}
-.agreeLine{width:310px; background:rgb(158, 158, 158); padding:1px; margin:10px 0px 10px 0px;}
-.pil{color:#1CD8A9;}
-.snsJoinBox ul li{list-style: none; display: inline-block;}
-.snsJoinBox{text-align:center;}
-.snsJoinFont{color:#333333; text-align:center; margin-top:20px; }
-.line{width:500px; background:rgb(158, 158, 158); padding:1px; margin:20px 0px 50px 235px;}
-.infoBox {margin-left: 235px;}
-.infoBox input[type="text"]{padding: 5px 0px 5px 0px;font-size:18px;width:20%; margin:7px 0px 20px 0px;}
-.infoBox button{padding: 10px 25px;background: #1CD8A9; border: 1px solid #1CD8A9; border-radius: 5px;}
-.infoBox .passwordBox p {margin-bottom:5px; display:inline-block;}
-.infoBox .passwordBox input[type="text"] {display: block;font-size:18px;width:50%;}
-.infoBox .nickBox p {margin-bottom:5px; display:inline-block;}
-.infoBox .nickBox input[type="text"] {display: block;width:50%;}
-.mailList{font-size:18px;padding: 5px 0px 5px 0px;width:20%;}
-.littleFont{font-size:13px;margin-left:10px; color:#4a4747}
-.joinButton{text-align:center;}
-.joinButton input[type="submit"]{font-size:16px;color:white;padding: 10px 50px;background: #1CD8A9;border: 1px solid #1CD8A9; border-radius: 5px;}
-</style>
-<script type="text/javascript">
-$(function(){
-	agreeCheckBox();
-	mailSelect();
-});//document.ready
-
-/**
- * 약관 전체 동의 체크박스 
- **/
-function agreeCheckBox(){
-	var $allCheck = $('#allCheck');
-	$allCheck.change(function () {
-	    var $this = $(this);
-	    var checked = $this.prop('checked'); // checked 문자열 참조(true, false)
-	    // console.log(checked);
-	    $('input[name="chk"]').prop('checked', checked);
-
-	});
-
-	var boxes = $('input[name="sports"]');
-	boxes.change(function () {
-	   
-	    var boxLength = boxes.length;
-	    // 체크된 체크박스 갯수를 확인용 :checked 필터를 사용하여 체크박스만 선택한 후 length 프로퍼티를 확인
-	    var checkedLength = $('input[name="chk"]:checked').length;
-	    var selectAll = (boxLength == checkedLength);
-
-	    $allCheck.prop('checked', selectAll);
-	});
-
-}//function
-
-/*이메일 뒷자리*/
-function mailSelect(){
-$("#mailSelect").change(function(){
-	$("#mail").val($("#mailSelect").val());
-});
-
-}
-</script>
+<script type="text/javascript" src="resources/js/user/userJoin.js"></script>
 </head>
 <body>
+
 <c:import url="../common/header.jsp"/>
 <div class="whiteBox"></div>
 <div class="main">
-<form method="post" action="userJoinSuccess.do">
+<form method="post" action="userJoinSuccess.do" id="joinForm" accept-charset="UTF-8">
 	<!-- Title -->
 	<div >
 		<h3 class="joinTitle">회원가입</h3>
@@ -114,12 +54,12 @@ $("#mailSelect").change(function(){
 	
 	<!-- 회원가입정보 -->
 	<div class="infoBox">
-		<div>
+		<div class="nameBox">
 			<p>이름</p>
-			<input type="text"/>
+			<input type="text" name="name"/>
 		</div>
 		
-		<div>
+		<div class="mailBox">
 			<p>이메일</p>
 			<input type="text" id="mailId"name="mailId"/> @ <input type="text" id="mail" name="mail"/>
 			<select id="mailSelect" class="mailList">
@@ -130,7 +70,7 @@ $("#mailSelect").change(function(){
 			</select>
 		</div>
 		
-		<div>
+		<div class="phoneBox">
 			<p>전화번호</p>
 			<input type="text" name="phone1"/>
 			<input type="text" name="phone2"/>
@@ -140,26 +80,33 @@ $("#mailSelect").change(function(){
 		
 		<div class="passwordBox">
 			<p>비밀번호</p><p class="littleFont">8자 이상 영문 대 소문자, 숫자, 특수문자 사용</p>
-			<input type="text" name="pwd1"/>
+			<input id="pwd1" type="text" name="password"/>
 		</div>
 		
 		<div class="passwordBox">
 			<p>비밀번호확인</p><p class="littleFont">상단의 비밀번호와 내용이 일치해야 합니다.</p>
-			<input type="text" name="pwd2"/>
+			<input id="pwd2" type="text"/>
 		</div>
 		
 		<div class="nickBox">
 			<p>닉네임</p><p class="littleFont">다른 유저와 겹치지 않는 닉네임을 입력해주세요(2자~15자)</p>
-			<input type="text" name="nickname"/>
+			<input type="text" name="nickName"/>
 		</div>
 		
-		<div>
-		API사용
+		<div class="addressBox">
+			<p>우편번호</p>
+				<input name="zipcode" class="zipcode" type="text" id="sample4_postcode" placeholder="우편번호">
+				<input class="addressBt" type="button" onclick="daumAddress();" value="우편번호 찾기"><br>
+				<input name="address1" class="doro" type="text" id="sample4_roadAddress" placeholder="도로명주소">
+				<input name="branchAddress" class="jibun"type="text" id="sample4_jibunAddress" placeholder="지번주소">
+				<span  id="guide"></span><br>
+				<input name="address2" class="detailAdd" type="text" id="sample4_detailAddress" placeholder="상세주소">
+				<input name="plusAddressInfo" class="plusInfo"type="text" id="sample4_extraAddress" placeholder="참고항목">
 		</div>
 	</div>
 	
 		<div class="joinButton">
-			<input type="submit" value="회원가입하기" />
+			<input type="button" id="joinSuccessBtn" value="회원가입하기">
 		</div>
 		
 		<div class="line"></div>
